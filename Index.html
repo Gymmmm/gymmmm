@@ -1,0 +1,72 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>公开信息索引 & TXID 自助核验</title>
+<link rel="stylesheet" href="assets/style.css"/><script defer src="assets/app.js"></script>
+</head><body><div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--accent)"></div>
+      <div>
+        <div style="font-weight:800">公开信息索引 & 自助核验</div>
+        <div class="small">信息聚合 / 自助检查 / 透明引用</div>
+      </div>
+      <span class="badge">FREE</span>
+    </div>
+    <div class="nav">
+      <a class="btn" href="sources.html">权威来源索引</a>
+      <a class="btn primary" href="check.html">TXID 自查</a>
+      <a class="btn" href="privacy.html">隐私与声明</a>
+      <a class="btn" id="langToggle" href="jp.html">日本語</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>只做公开信息整理 + TXID 自助核验</h1>
+    <div class="alert">
+      <b>固定声明：</b>不收费；不代办追款；不承诺返还；不会私聊；不会索要私钥/助记词/验证码；不会要求你再转账或交任何“解冻/认证/手续费”。
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="check.html">进入 TXID 自查</a>
+      <a class="btn" href="sources.html">查看权威来源索引</a>
+    </div>
+    <div class="kv">
+      <span>最小输入：链 / TXID / 时间 / 收款地址</span>
+      <span>输出：命中 / 间接 / 未发现（占位）</span>
+      <span>不采集：私钥、助记词、短信码、证件号</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>你可以在这做什么</h2>
+      <ul class="list">
+        <li>查 TXID：把交易哈希贴进来，拿到可点击的证据链接（等你接后端）</li>
+        <li>看来源：把通报/公告/公开文件按时间线整理</li>
+        <li>下载线索包：后续可生成 PDF（占位）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>我们不会做什么</h2>
+      <ul class="list">
+        <li>不做“追款代理/回收服务”</li>
+        <li>不收任何费用/押金/服务费</li>
+        <li>不引导你进行任何二次转账</li>
+      </ul>
+    </div>
+    <div class="card full">
+      <h2>快速入口</h2>
+      <div class="btns">
+        <a class="btn primary" href="check.html">TXID 自查</a>
+        <a class="btn" href="sources.html">权威来源索引</a>
+        <a class="btn" href="privacy.html">隐私与声明</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>© <span id="y"></span> Public Index</div>
+    <div class="small">联系：contact@example.com（自己换）</div>
+  </div>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>
